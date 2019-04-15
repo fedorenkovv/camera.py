@@ -26,7 +26,7 @@ def p2e(projective):
     :return: euclidean coordinate(s)
     :rtype: numpy.ndarray, shape=(2 or 3, n)
     """
-    assert(type(projective) == np.ndarray)
+    assert(type(projective) == np.ndarray) or (type(projective) == np.matrix)
     assert((projective.shape[0] == 4) | (projective.shape[0] == 3))
     return (projective / projective[-1, :])[0:-1, :]
 
@@ -941,3 +941,4 @@ def calibrate_division_model(line_coordinates, y0, z_n, focal_length=1):
     res = minimize_scalar(lambda p: lines_fit_error(p, line_coordinates, c))
     c.division_lambda = float(res.x)
     return c
+

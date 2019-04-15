@@ -14,7 +14,7 @@ Installation
 ------------
 :: 
 
-    pip install git+https://github.com/smidm/camera.py.git
+    pip install git+https://github.com/fedorenkovv/camera.py.git
     
 Usage
 -----
